@@ -12,15 +12,7 @@ export const Header = (props) => {
                   {props.data ? props.data.title : "Loading"}
                   <span></span>
                 </h1>
-                <p style={{ backgroundColor: '#993300' }}>
-                  {props.data ? props.data.paragraph : "Loading"}
-                </p>
-                <a
-                  href="https://aceofbladesco.com/"
-                  className="btn btn-custom btn-lg page-scroll"
-                >
-                  Book Now
-                </a>{" "}
+
               </div>
             </div>
           </div>

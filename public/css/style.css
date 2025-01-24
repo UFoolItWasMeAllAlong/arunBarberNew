@@ -4,7 +4,7 @@ html {
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   color: #777;
-  background: linear-gradient(to right, black 0%, grey 100%);
+  background: white;
   font-weight: 400;
   width: 100% !important;
   height: 100% !important;
@@ -16,24 +16,22 @@ h4 {
   font-family: "Raleway", sans-serif;
 }
 
-h1{
-  background-color: #993300;
-}
+
 h2 {
   text-transform: uppercase;
   margin: 0 0 20px;
   font-weight: 800;
   font-size: 36px;
-  color: white;
+  color: black;
 }
 h3 {
   font-size: 20px;
   font-weight: 600;
-  color: white;
+  color: black;
 }
 h4 {
   font-size: 18px;
-  color: white;
+  color: black;
   font-weight: 600;
 }
 h5 {
@@ -271,13 +269,26 @@ header .intro-text {
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
 /* About Section */
-#about {
+#about .about-text{
   padding: 100px 0;
 }
-#about h3 {
+#about #who-am-i-image-container{
+  width: 50%;
+  overflow: hidden;
+}
+
+#about .col-xs-12 img{
+  width: 100%; /* Make sure the image fills the container */
+  /* Apply the gradient mask to fade to white on the right */
+  mask-image: linear-gradient(to right, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+}
+
+
+  #about h3 {
   font-size: 22px;
   margin: 0 0 20px;
-  color: white;
+  color: black;
 }
 #about h2 {
   position: relative;
@@ -299,7 +310,7 @@ header .intro-text {
   margin-left: 6px;
   list-style: none;
   padding: 0;
-  color: white;
+  color: black;
 }
 #about .about-text li:before {
   content: "\f00c";
@@ -319,19 +330,18 @@ header .intro-text {
 #about p {
   line-height: 24px;
   margin: 30px 0;
-  color: white;
+  color: black;
 }
 /* Services Section */
 #services {
-  padding: 100px 0;
-  background: black;
-  color: #fff;
+  background: white;
+  color: black;
 }
 #services .service-desc {
   margin: 10px 10px 20px;
 }
 #services h2 {
-  color: #fff;
+  color: black;
 }
 #services .section-title h2::after {
   position: absolute;
@@ -350,40 +360,27 @@ header .intro-text {
   padding: 40px 0;
   background: linear-gradient(to right, black 0%, #993300 100%);
   border-radius: 50%;
-  color: #fff;
+  color: white;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
 }
 #services h3 {
   font-weight: 500;
   padding: 5px 0;
-  color: #fff;
+  color: black;
 }
 #services p {
-  color: rgba(255, 255, 255, 0.75);
+  color: black;
 }
 #services .service-desc {
   margin-bottom: 40px;
 }
 /* Portfolio Section */
-#portfolio {
-  padding: 100px 0;
-  background: linear-gradient(to right, grey 0%, black 100%);;
-}
-.portfolio-item {
-  margin: 1px -15px 0 -14px;
-  padding: 0;
-}
-.portfolio-item .hover-bg {
-  overflow: hidden;
-  position: relative;
-  margin: 0;
-}
 
-#portfolio p{
-  color:#fff;
-}
-.hover-bg .hover-text {
+/* Base state of hover-icon */
+.hover-bg .hover-icon {
   position: absolute;
+  top: 0;
+  left: 0;
   text-align: center;
   margin: 0 auto;
   color: #fff;
@@ -392,26 +389,11 @@ header .intro-text {
   height: 100%;
   width: 100%;
   opacity: 0;
-  transition: all 0.5s;
+  transition: opacity 0.5s;
 }
-.hover-bg .hover-text > h4 {
-  opacity: 0;
-  color: #fff;
-  -webkit-transform: translateY(100%);
-  transform: translateY(100%);
-  transition: all 0.3s;
-  font-size: 18px;
-  letter-spacing: 1px;
-  font-weight: 500;
-  text-transform: uppercase;
-}
-.hover-bg:hover .hover-text > h4 {
-  opacity: 1;
-  -webkit-backface-visibility: hidden;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-.hover-bg:hover .hover-text {
+
+/* Hover state of hover-icon */
+.hover-bg:hover .hover-icon {
   opacity: 1;
 }
 /* Testimonials Section */
@@ -475,8 +457,8 @@ header .intro-text {
 /* Contact Section */
 #contact {
   padding: 100px 0 60px;
-  background: black;
-  color: rgba(255, 255, 255, 0.75);
+  background: white;
+  color: black;
 }
 #contact .section-title {
   margin-bottom: 40px;
@@ -485,7 +467,7 @@ header .intro-text {
   font-size: 16px;
 }
 #contact h2 {
-  color: #fff;
+  color: black;
   margin-top: 10px;
   margin-bottom: 15px;
   padding-bottom: 15px;
@@ -500,7 +482,7 @@ header .intro-text {
   left: 30px;
 }
 #contact h3 {
-  color: #fff;
+  color: black;
   margin-top: 80px;
   margin-bottom: 25px;
   padding-bottom: 20px;
@@ -614,8 +596,33 @@ label {
   border-bottom: 2px solid #608dfd;
 }
 
-@media (max-width: 768px) {
-  #about img {
-    margin: 50px 0;
-  }
+/* StickyButton.css */
+
+.sticky-button-container {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1000; /* Ensure it stays above other elements */
 }
+
+.sticky-button {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: black;
+  background: linear-gradient(to right, black 0%, grey 100%);
+  padding: 14px 34px;
+  letter-spacing: 1px;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 25px;
+  transition: all 0.5s linear;
+  border: 0;
+  box-shadow: 0 6px 10px #3e8ef8;
+}
+
+.sticky-button:hover {
+  filter: brightness(140%);
+}
+

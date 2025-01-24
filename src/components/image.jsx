@@ -1,16 +1,19 @@
 import React from "react";
 
-export const Image = ({ title, largeImage, smallImage }) => {
+export const Image = ({
+  title,
+  largeImage,
+  smallImage,
+  index,
+  openLightbox,
+}) => {
   return (
     <div className="portfolio-item">
-      <div className="hover-bg">
-        {" "}
-        <a href={largeImage} title={title} data-lightbox-gallery="gallery1">
-          <div className="hover-text">
-            <h4>{title}</h4>
-          </div>
-          <img src={smallImage} className="img-responsive" alt={title} />{" "}
-        </a>{" "}
+      <div className="hover-bg" onClick={() => openLightbox(index)}>
+        <div className="hover-icon">
+          <img src="path/to/your/icon.png" alt="View larger" />
+        </div>
+        <img src={smallImage} className="img-responsive" alt={title} />
       </div>
     </div>
   );
