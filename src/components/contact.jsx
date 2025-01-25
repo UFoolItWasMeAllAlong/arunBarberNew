@@ -82,7 +82,7 @@ export const Contact = (props) => {
                 </button>
 
                 <div className="login-with">
-                  <a href={props.data ? props.data.facebook : "/"} className="button-log">
+                  <a href="https://www.instagram.com/ar.blendz.to/" className="button-log">
                     <i className="fa fa-instagram"></i>
                   </a>
                 </div>
@@ -91,7 +91,7 @@ export const Contact = (props) => {
           </div>
 
           {/* Hours Form */}
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-6 hours-section">
             <div className="form-wrapper">
               <div className="form">
                 <div className="title">

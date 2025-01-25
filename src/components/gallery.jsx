@@ -3,7 +3,7 @@ import "./gallery.css";
 
 export const Gallery = (props) => {
   return (
-    <div className="gallery">
+    <div id="gallery" className="gallery">
       <div className="text">
         <h2>Gallery</h2>
         <p>Some of my freshest cuts</p>
