@@ -6,16 +6,16 @@
   "About": {
     "paragraph": "Meet me, a barber working at Toronto's very own Ace of Blades, and get a fade you won't forget. With 2 years of experience under my belt, and multiple connections in the industry, I will make sure to make you shine.",
     "Why": [
-      "$30-$35 Hair Cuts",
-      "Any type of Hairstyle",
-      "Experience backed by Professionals In This Industry",
-      "Incididunt ut labore"
+      "Haircut: $25",
+      "Haircut + Beard: $30",
+      "Lineup: $15",
+      "AOB Presidential Package: $50"
     ],
     "Why2": [
       "Personal Appointments Available",
-      "$50 per cut",
-      "SMTH",
-      "Lorem ipsum dolor"
+      "Consistency you can trust",
+      "Experience backed by Professionals In This Industry",
+      "Fresh, clean fades and cuts"
     ]
   },
   "Gallery": [
@@ -68,18 +68,18 @@
   "Services": [
     {
       "icon": "fa fa-scissors",
-      "name": "No Matter the cut i get it done",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "No Matter the Cut I Get It Done",
+      "text": "Our services are designed to keep you looking and feeling your best. From precision haircuts and sharp beard grooming to our premium AOB Presidential Package, we deliver quality tailored to your needs."
     },
     {
-      "icon": "fa fa-scissors",
-      "name": "Consectetur adipiscing",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-clock-o",
+      "name": "Cuts Backed By Time & Experience",
+      "text": "With 2 years of experience, I’ve built a reputation for quality cuts, personalized service, and a commitment to excellence."
     },
     {
-      "icon": "fa fa-scissors",
-      "name": "Lorem ipsum dolor",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "icon": "fa fa-car",
+      "name": "Cuts Straight To Your Door",
+      "text": "As long as you live in the GTA, I'll be there to cut your hair for at home bookings. Email me below to set it up today!"
     }    
   ],
   "Testimonials": [
