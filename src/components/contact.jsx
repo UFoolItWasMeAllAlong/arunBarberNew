@@ -39,7 +39,7 @@ export const Contact = (props) => {
       <div className="container">
         <div className="row">
           {/* Contact Form */}
-          <div className="col-md-6">
+          <div className="col-12 col-md-6">
             <div className="form-wrapper">
               <form className="form" name="sentMessage" validate onSubmit={handleSubmit}>
                 <div className="title">
@@ -91,7 +91,7 @@ export const Contact = (props) => {
           </div>
 
           {/* Hours Form */}
-          <div className="col-md-6">
+          <div className="col-12 col-md-6">
             <div className="form-wrapper">
               <div className="form">
                 <div className="title">

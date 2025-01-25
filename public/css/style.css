@@ -335,6 +335,7 @@ header .intro-text {
 /* Services Section */
 #services {
   background: white;
+  padding-top: 5vh;
   color: black;
 }
 #services .service-desc {

@@ -3,14 +3,19 @@
     --bg-color: #000;
     --main-color: #3e8ef8;
     padding: 30px;
-    background: linear-gradient(to right, black 0%, grey 100%); /* Same as button */
+    background: linear-gradient(to right, black 0%, grey 100%);
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+     align-items: center; /* Centers child elements horizontally */
     justify-content: center;
     gap: 20px;
     border-radius: 25px;
-    box-shadow: 0 6px 10px #3e8ef8; /* Same as button */
+    box-shadow: 0 6px 10px #3e8ef8;
+  
+    /* Add these properties */
+    max-width: 100%; /*     Adjust the value as needed */
+    width: 100%;
+    margin: 0 auto; /* Centers the form horizontally */
   }
   
   .title {
@@ -120,7 +125,7 @@
   /* Make form responsive */
   @media (min-width: 768px) {
     .form {
-      max-width: none;
+      max-width: 100%;
       margin: 0 auto;
     }
   }

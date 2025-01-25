@@ -1,130 +1,131 @@
-/* gallery.css */
+/* Apply box-sizing within the gallery */
+.gallery * {
+  box-sizing: border-box;
+}
 
+/* Gallery Container Styles */
+.gallery {
+  background: linear-gradient(to right, black 0%, grey 100%);
+  padding: 30px;
+  width: 90vw;
+  margin-left: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 25px;
+  box-shadow: 0 6px 10px #3e8ef8; /* Same as button */
+  
+  /* Custom Properties Scoped to Gallery */
+  --lerp-0: 1;
+  --lerp-1: 0.5787037;
+  --lerp-2: 0.2962963;
+  --lerp-3: 0.125;
+  --lerp-4: 0.037037;
+  --lerp-5: 0.0046296;
+  --lerp-6: 0;
+}
 
-  #portfolio {
-    margin-top: 50px;
-  }
-  .portfolio-item { 
-    margin: 1px -15px 0 -14px;
-    padding: 20;
-  }
-  .portfolio-item .hover-bg {
-    overflow: hidden;
-    position: relative;
-    margin: 0;
-  }
-  
-  #portfolio p{
-    color:black;
-  }
+.gallery h2 {
+  color: white;
+  text-align: center !important;
+  margin: 0;
+}
 
-  /* Lightbox Overlay */
-.lightbox-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000; /* Ensures it appears on top */
-  }
-  
-  .lightbox-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-  }
-  
-  .lightbox-image {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  .lightbox-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .lightbox-close:hover {
-    color: #ccc;
-  }
-  
-  /* Navigation Buttons */
-  .lightbox-prev,
-  .lightbox-next {
-    position: absolute;
-    top: 50%;
-    font-size: 3rem;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    transform: translateY(-50%);
-  }
-  
-  .lightbox-prev {
-    left: 15px;
-  }
-  
-  .lightbox-next {
-    right: 15px;
-  }
-  
-  .lightbox-prev:hover,
-  .lightbox-next:hover {
-    color: #ccc;
-  }
-  
-  /* Prevent Image Selection */
-  .lightbox-image,
-  .lightbox-prev,
-  .lightbox-next,
-  .lightbox-close {
-    user-select: none;
-  }
-  
-  /* Adjust icon size if using an image icon */
-  .hover-icon img {
-    width: 50px; /* Adjust as needed */
-    height: 50px; /* Adjust as needed */
-  }
-  
-  /* Hover Effects */
-  .hover-bg {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-  }
-  
-  .hover-bg .img-responsive {
-    width: 100%;
-    height: auto;
-  }
-  
-  .hover-bg .hover-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-  }
-  
-  .hover-bg:hover .hover-icon {
-    opacity: 1;
-  }
+.gallery p {
+  color: #ccc;
+  font-size: 20px;
+  padding: 20px;  
+}
+
+/* Adjust UL Styles within Gallery */
+.gallery ul {
+  display: flex;
+  width: 80%;
+  max-width: 1200px; /* Optional: set a max width */
+  padding: 0;
+  margin: 0 auto; /* Center the ul within its container */
+  list-style-type: none;
+}
+
+/* Adjust LI Styles within Gallery */
+.gallery li {
+  padding: 0;
+  border: 5px solid transparent; /* Adds border around each photo */
+  flex: calc(0.1 + (var(--active-lerp, 0) * 1));
+  transition: flex 0.2s ease;
+}
+
+/* Adjust Results Class within Gallery */
+.gallery .results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -1px; /* Adjusts for border thickness */
+}
+
+/* Image Styles within Gallery */
+.gallery img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.2s ease;
+}
+
+/* Link Styles within Gallery */
+.gallery a {
+  outline-offset: 4px;
+}
+
+/* Hover and Focus Effects within Gallery */
+.gallery ul:is(:hover, :focus-within) img {
+  opacity: calc(0.1 + (var(--active-lerp, 0) * 0.9));
+  filter: grayscale(calc(1 - var(--active-lerp, 0)));
+}
+
+.gallery li {
+  flex: calc(0.1 + (var(--active-lerp, 0) * 1));
+  transition: flex 0.2s ease;
+}
+
+.gallery li:is(:hover, :focus-within) {
+  --active-lerp: var(--lerp-0);
+  z-index: 7;
+}
+
+.gallery li:has(+ li:is(:hover, :focus-within)),
+.gallery li:is(:hover, :focus-within) + li {
+  --active-lerp: var(--lerp-1);
+  z-index: 6;
+}
+
+.gallery li:has(+ li + li:is(:hover, :focus-within)),
+.gallery li:is(:hover, :focus-within) + li + li {
+  --active-lerp: var(--lerp-2);
+  z-index: 5;
+}
+
+.gallery li:has(+ li + li + li:is(:hover, :focus-within)),
+.gallery li:is(:hover, :focus-within) + li + li + li {
+  --active-lerp: var(--lerp-3);
+  z-index: 4;
+}
+
+.gallery li:has(+ li + li + li + li:is(:hover, :focus-within)),
+.gallery li:is(:hover, :focus-within) + li + li + li + li {
+  --active-lerp: var(--lerp-4);
+  z-index: 3;
+}
+
+.gallery li:has(+ li + li + li + li + li:is(:hover, :focus-within)),
+.gallery li:is(:hover, :focus-within) + li + li + li + li + li {
+  --active-lerp: var(--lerp-5);
+  z-index: 2;
+}
+
+.gallery li:has(+ li + li + li + li + li + li:is(:hover, :focus-within)),
+.gallery li:is(:hover, :focus-within) + li + li + li + li + li + li {
+  --active-lerp: var(--lerp-6);
+  z-index: 1;
+}
