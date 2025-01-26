@@ -651,4 +651,19 @@ label {
     visibility: none;
     display: none;
   }
+  #about .h3 {
+    visibility: none;
+    display: none;
+  }
+
+  #stickyButton{
+    position: fixed;
+    justify-content: center;
+  }
+
+  #about .who-am-i-image-container{
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+  }
 }

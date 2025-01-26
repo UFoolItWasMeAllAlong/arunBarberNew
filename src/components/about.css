@@ -4,6 +4,10 @@
   margin-top: 60px;  /* Increased from 30px to 60px for more spacing */
   clear: both;
   padding-top: 20px; /* Additional padding */
-  border-top: 1px solid #eee; /* Optional: adds a subtle divider line */
+  border-top: 1px solid white; /* Optional: adds a subtle divider line */
+}
+
+.who-am-i-image-container {
+  width: 50vw;
 }
 
