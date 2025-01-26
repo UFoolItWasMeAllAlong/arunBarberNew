@@ -17,8 +17,11 @@ export const About = (props) => {
           <div className="col-xs-12 col-md-6">
             <div className="about-text">
               {/* Who Am I */}
+              <div className="who-am-i"></div>
               <h2>Who Am I</h2>
-              <p>{props.data ? props.data.paragraph : "loading..."}</p>
+              <div className="hide-mobile">
+                <p>{props.data ? props.data.paragraph : "loading..."}</p>
+              </div>
               
               {/* What Do I Bring */}
               <h3>What Do I Bring To The Table?</h3>

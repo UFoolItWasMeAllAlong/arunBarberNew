@@ -75,7 +75,7 @@
 
 /* Link Styles within Gallery */
 .gallery a {
-  outline-offset: 4px;
+  outline-offset: 6px;
 }
 
 /* Hover and Focus Effects within Gallery */
@@ -129,3 +129,9 @@
   --active-lerp: var(--lerp-6);
   z-index: 1;
 }
+
+.gallery li:nth-child(6) {
+  --active-lerp: var(--lerp-0);
+  z-index: 7;
+}
+
