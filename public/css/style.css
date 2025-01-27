@@ -641,15 +641,21 @@ label {
     width: 100%;
   }
 
+  .intro {
+    background-size: cover;
+    background-position: center;
+  }
 
+  .intro h1 {
+    font-size: 4rem; /* Reduced from 82px */
+    line-height: 1.2;
+    transform: translateY(-10vh);
+    margin-bottom: 10px;
+    text-shadow: 1px 2px 10px black;
+  }
 
-  /* Header Section */
-  @media (max-width: 600px){
-    #header .intro,
-    #header .intro-text,
-    #header .h1 {
-      font-size: 1.0rem !important;
-    }
+  header .intro-text {
+    text-align: center;
   }
 
   #header .intro,
