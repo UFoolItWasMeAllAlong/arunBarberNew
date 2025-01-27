@@ -136,4 +136,12 @@
 }
 
 
+@media (max-width: 768px) {
+  #gallery *{
+    visibility:hidden;
+    display: none;
+    max-height: 0;
+  }
+}
+
 
