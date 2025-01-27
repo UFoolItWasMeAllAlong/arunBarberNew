@@ -757,6 +757,7 @@ label {
   
     .sticky-button-container {
       position: fixed;
+      margin: auto;
       bottom: 20px;        /* Adjusted bottom position */
       left: 50%;           /* Centered horizontally */
       transform: translateX(-50%); /* Ensure perfect centering */
