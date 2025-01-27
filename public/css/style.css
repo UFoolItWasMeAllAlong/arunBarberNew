@@ -630,74 +630,121 @@ label {
 }
 
 
-/* Make form responsive */
 @media (max-width: 768px) {
-
-  #header .intro{
-    width: 100vw;
-  }
-
-  #header .header {
-    width: 100vw;
+  /* Global Centering */
+  body, html {
+    text-align: center;
     overflow-x: hidden;
+    width: 100%;
   }
 
+  /* Header Section */
+  #header .intro,
   #header .header {
-    width: 100vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     overflow-x: hidden;
   }
 
   #header .h1 {
     font-size: 2.5rem;
+    text-align: center;
+    width: 100%;
   }
 
-  
-
-
-
-
-
-
-  #services .p {
-    display: none;
-    visibility: none;
-  }
-
-  #about .h2 {
+  /* About Section */
+  #about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
 
+  #about .h2,
   #about .h3 {
     text-align: center;
+    width: 100%;
   }
 
-  #about .hide-mobile {
-    display: none;
-    visibility: none;
+  #about .about-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
-  #about .location-text {
-    display: none;
-    visibility: none;
-  }
-
-  #contact .hours {
-    visibility: none;
-    display: none;
-  }
-  #about .h3 {
-    visibility: none;
-    display: none;
-  }
-
-  #stickyButton{
-    position: fixed;
-    justify-content: center;
-  }
-
-  #about .who-am-i-image-container{
-    width: 30vw;
-    height: 30vw;
+  #about .who-am-i-image-container {
+    width: 50vw;
+    height: 50vw;
     border-radius: 50%;
+    margin: 0 auto;
   }
+
+  #about img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* Services Section */
+  #services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #services .service-desc {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Contact Section */
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #contact form {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  /* Hide Mobile Elements */
+  #services .p,
+  #about .hide-mobile,
+  #about .location-text,
+  #contact .hours,
+  #about .h3 {
+    display: none;
+  }
+
+  /* Sticky Button */
+  #stickyButton {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Ensure all images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* Responsive Typography */
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  p { font-size: 1rem; }
 }
