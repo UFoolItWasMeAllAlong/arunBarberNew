@@ -638,6 +638,8 @@ label {
     width: 100%;
   }
 
+
+
   /* Header Section */
   #header .intro,
   #header .header {
@@ -650,7 +652,7 @@ label {
   }
 
   #header .h1 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: center;
     width: 100%;
   }
@@ -679,7 +681,7 @@ label {
   #about .who-am-i-image-container {
     width: 50vw;
     height: 50vw;
-    border-radius: 50%;
+    border-radius: 50% !important;
     margin: 0 auto;
   }
 
@@ -725,13 +727,24 @@ label {
   #contact .hours,
   #about .h3 {
     display: none;
+    visibility: none;
   }
 
-  /* Sticky Button */
-  #stickyButton {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
+  @media (max-width: 768px) {
+    .sticky-button {
+      padding: 18px 48px;  /* Increased padding */
+      font-size: 18px;     /* Larger font size */
+      width: auto;         /* Allow width to adjust to content */
+      min-width: 200px;    /* Minimum width */
+    }
+  
+    .sticky-button-container {
+      position: fixed;
+      bottom: 20px;        /* Adjusted bottom position */
+      left: 50%;           /* Centered horizontally */
+      transform: translateX(-50%); /* Ensure perfect centering */
+      z-index: 1000;
+    }
   }
 
   /* Ensure all images are responsive */
