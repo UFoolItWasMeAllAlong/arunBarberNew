@@ -6,9 +6,6 @@ export const Services = (props) => {
       <div className="container">
         <div className="section-title">
           <h2>Our Services</h2>
-          <p>
-            With so much to offer, I'm confident about your satisfaction!
-          </p>
         </div>
         <div className="row">
           {props.data
@@ -18,7 +15,7 @@ export const Services = (props) => {
                   <i className={d.icon}></i>
                   <div className="service-desc">
                     <h3>{d.name}</h3>
-                    <p>{d.text}</p>
+                    <p className="hide-mobile">{d.text}</p>
                   </div>
                 </div>
               ))

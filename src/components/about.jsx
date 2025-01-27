@@ -1,28 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import './about.css'
 
 export const About = (props) => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <div id="about">
       <div className="container-fluid">
-        <div className="row">
-          {/* Image Section */}
-          <div className="who-am-i-image-container">
-            <div className="col-xs-12 col-md-6 d-flex align-items-stretch p-0">
-              <img src="img/myIcons/arunWhoAmI.jpg" className="img-responsive" alt="" />
-            </div>
-          </div>          
+        <div className="row about-row">
+          <div className="col-xs-12 col-md-6 who-am-i-image-container">
+            <img 
+              src={isMobile
+                ? "img/myIcons/arunWhoAmI-mobile.jpg" 
+                : "img/myIcons/arunWhoAmI.jpg"
+              } 
+              className="img-responsive about-image" 
+              alt="" 
+            />
+          </div>         
           
-          {/* Content Section */}
           <div className="col-xs-12 col-md-6">
             <div className="about-text">
-              {/* Who Am I */}
               <h2>What I Do</h2>
               <div className="hide-mobile">
                 <p>{props.data ? props.data.paragraph : "loading..."}</p>
               </div>
               
-              {/* What Do I Bring */}
               <h3>What Do I Bring To The Table?</h3>
               <div className="list-style row">
                 <div className="col-md-6">
@@ -45,7 +57,6 @@ export const About = (props) => {
                 </div>
               </div>
 
-              {/* Where To Find Me - Inside the right column */}
               <div className="where-to-find-me">
                 <h2>Where To Find Me</h2>
                 <p className="location-text">
@@ -63,7 +74,6 @@ export const About = (props) => {
                     referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
                 </div>
-                {/* Add your location content here */}
               </div>
             </div>
           </div>

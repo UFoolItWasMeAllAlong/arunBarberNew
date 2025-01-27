@@ -279,11 +279,14 @@ header .intro-text {
   overflow: hidden;
 }
 
-#about .col-xs-12 img{
-  width: 100%; /* Make sure the image fills the container */
-  /* Apply the gradient mask to fade to white on the right */
-  mask-image: linear-gradient(to right, black 70%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+@media (min-width: 601px){
+  #about .col-xs-12 img{
+    width: 100%; /* Make sure the image fills the container */
+    /* Apply the gradient mask to fade to white on the right */
+    mask-image: linear-gradient(to right, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, black 70%, transparent 100%);
+  }
+  
 }
 
 
@@ -641,6 +644,14 @@ label {
 
 
   /* Header Section */
+  @media (max-width: 600px){
+    #header .intro,
+    #header .intro-text,
+    #header .h1 {
+      font-size: 1.0rem !important;
+    }
+  }
+
   #header .intro,
   #header .header {
     width: 100%;
@@ -727,7 +738,7 @@ label {
   #contact .hours,
   #about .h3 {
     display: none;
-    visibility: none;
+    visibility: none; 
   }
 
   @media (max-width: 768px) {
@@ -755,9 +766,13 @@ label {
     margin: 0 auto;
   }
 
+  #services .hide-mobile {
+    display: none;
+    visibility: none;
+  }
+
   /* Responsive Typography */
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.2rem; }
+
+  h3 { font-size: 1.6rem; }
   p { font-size: 1rem; }
 }
