@@ -637,6 +637,14 @@ label {
     visibility: none;
   }
 
+  #about .h2 {
+    text-align: center;
+  }
+
+  #about .h3 {
+    text-align: center;
+  }
+
   #about .hide-mobile {
     display: none;
     visibility: none;

@@ -17,7 +17,6 @@ export const About = (props) => {
           <div className="col-xs-12 col-md-6">
             <div className="about-text">
               {/* Who Am I */}
-              <div className="who-am-i"></div>
               <h2>What I Do</h2>
               <div className="hide-mobile">
                 <p>{props.data ? props.data.paragraph : "loading..."}</p>
